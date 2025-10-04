@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content=".NET Developer Portfolio of Mohamed Elmnegged - ASP.NET Core, EF, SQL, Azure Projects.">
+  <meta name="author" content="Mohamed Elmnegged">
+  <meta name="keywords" content=".NET, ASP.NET Core, C#, Backend Developer, Portfolio, Software Engineer, Backend Engineer">
+
+  <!-- Open Graph for social previews -->
+  <meta property="og:title" content="Mohamed Elmnegged | .NET Backend Developer">
+  <meta property="og:description" content="Explore my .NET projects, backend systems, and API work.">
+  <meta property="og:image" content="preview.png">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="favicon.ico" />
+
+  <title>Mohamed Elmnegged | .NET Developer</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #f8fafc;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    header {
+      text-align: center;
+      padding: 7rem 1rem 4rem;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #38bdf8;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      color: #94a3b8;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    header .tagline {
+      color: #cbd5e1;
+      margin-top: 0.8rem;
+      font-size: 1rem;
+      font-style: italic;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    h2 {
+      color: #38bdf8;
+      border-bottom: 2px solid #38bdf8;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    /* Skills & Projects */
+    .skills, .projects {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .skills {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      text-align: center;
+    }
+
+    .skills div {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 12px;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .skills div:hover {
+      transform: scale(1.05);
+      background: rgba(56, 189, 248, 0.1);
+    }
+
+    .projects .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 12px;
+      transition: 0.3s ease;
+    }
+
+    .projects .card:hover {
+      transform: translateY(-8px);
+      background: rgba(56, 189, 248, 0.1);
+    }
+
+    .card h3 {
+      color: #f1f5f9;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .card a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    /* CV Button */
+    .cv-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background: #38bdf8;
+      color: #0f172a;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .cv-btn:hover {
+      background: #0ea5e9;
+    }
+
+    /* Contact */
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 12px;
+    }
+
+    .contact input, .contact textarea {
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      background: #1e293b;
+      color: #f8fafc;
+      resize: none;
+    }
+
+    .contact button {
+      padding: 0.8rem;
+      background: #38bdf8;
+      border: none;
+      border-radius: 8px;
+      color: #0f172a;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact button:hover {
+      background: #0ea5e9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: #94a3b8;
+      font-size: 0.9rem;
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+
+    footer a {
+      color: #38bdf8;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      color: #0ea5e9;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* 📱 Responsive */
+    @media (max-width: 600px) {
+      header {
+        padding: 6rem 1rem 2rem;
+      }
+      section {
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+      }
+      .card h3 {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Mohamed Elmnegged</h1>
+    <p>Software Engineer | .NET Backend Developer</p>
+    <p class="tagline">Turning complex business logic into elegant backend solutions ⚙️</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Software Engineer with over 2 years of experience in developing full-stack applications 
+      and enhancing CRM systems. I’m passionate about designing clean backend architectures 
+      and continuously learning new .NET technologies.
+    </p>
+    <a href="MOHAMED_ELMNEGGED.pdf" class="cv-btn" download>📄 Download My CV</a>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div>C#</div>
+      <div>ASP.NET Core</div>
+      <div>Entity Framework</div>
+      <div>SQL Server</div>
+      <div>REST APIs</div>
+      <div>Umbraco</div>
+      <div>LINQ</div>
+      <div>Angular</div>
+      <div>Git / GitHub</div>
+      <div>HTML</div>
+      <div>CSS</div>
+      <div>JavaScript</div>
+      <div>Crystal Report</div>
+      <div>Oracle</div>
+      <div>Azure</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+
+      <div class="card">
+        <h3>CPA</h3>
+        <p>A CMS system developed with ASP.NET Core to manage user content and complaints. Implemented secure authentication, role-based access, and structured workflow.</p>
+        <p><strong>🧰 Tech:</strong> Umbraco, ASP.NET Core, Entity Framework, SQL Server, Hangfire</p>
+      </div>
+
+      <div class="card">
+        <h3>Awqaf Microservice System</h3>
+        <p>A microservice-based system for workflow between departments with multi-level approvals and process tracking.</p>
+        <p><strong>🧰 Tech:</strong> ASP.NET Core, Entity Framework, SQL Server, Microservice</p>
+      </div>
+
+      <div class="card">
+        <h3>NASPS</h3>
+        <p>A scalable CMS platform for managing digital content efficiently with optimized SQL queries.</p>
+        <p><strong>🧰 Tech:</strong> Umbraco, ASP.NET Core, Entity Framework, SQL Server</p>
+      </div>
+
+      <div class="card">
+        <h3>Archive System</h3>
+        <p>A document archiving system to digitize and organize physical records with dynamic folder structures.</p>
+        <p><strong>🧰 Tech:</strong> .Net, Desktop App, Dapper, Oracle, Crystal Report</p>
+        <a href="https://github.com/mohamedelmnegged/ArchiveSystem" target="_blank">View on GitHub ↗</a>
+      </div>
+
+      <div class="card">
+        <h3>ICarry</h3>
+        <p>A B2B logistics platform managing shipments and orders between businesses with focus on scalability and UX.</p>
+        <p><strong>🧰 Tech:</strong> NopCommerce, Plugins, ASP.NET Core, Entity Framework, SQL Server</p>
+        <a href="https://icarry.com/ar/" target="_blank">View Live ↗</a>
+      </div>
+
+      <div class="card">
+        <h3>StackOverFlow API</h3>
+        <p>A RESTful API simulating Stack Overflow features like authentication, Q&A, and voting.</p>
+        <p><strong>🧰 Tech:</strong> ASP.NET Core, Entity Framework, SQL Server</p>
+        <a href="https://github.com/mohamedelmnegged/StackOverFlowApi" target="_blank">View on GitHub ↗</a>
+      </div>
+
+      <div class="card">
+        <h3>Reservation System</h3>
+        <p>Booking system for apartments and chalets in the North Coast with CRUD and availability tracking.</p>
+        <p><strong>🧰 Tech:</strong> ASP.NET Core, Entity Framework, SQL Server</p>
+        <a href="https://github.com/mohamedelmnegged/Reservation" target="_blank">View on GitHub ↗</a>
+      </div>
+
+      <div class="card">
+        <h3>BookStore</h3>
+        <p>Web app for managing books, inventory, and orders with RESTful APIs and EF integration.</p>
+        <p><strong>🧰 Tech:</strong> ASP.NET Core, Entity Framework, SQL Server</p>
+        <a href="https://github.com/mohamedelmnegged/Asp.NetCore-BookStore" target="_blank">View on GitHub ↗</a>
+      </div>
+
+      <div class="card">
+        <h3>Employee Management</h3>
+        <p>HR management system handling employee data, roles, and CRUD operations with clean architecture.</p>
+        <p><strong>🧰 Tech:</strong> ASP.NET Core, Entity Framework, SQL Server</p>
+        <a href="https://github.com/mohamedelmnegged/Asp.netCore-EmployeeManagement" target="_blank">View on GitHub ↗</a>
+      </div>
+
+      <div class="card">
+        <h3>Droos Management System</h3>
+        <p>Desktop app for managing offline courses and student registrations in learning centers.</p>
+        <p><strong>🧰 Tech:</strong> .Net, Desktop App, Dapper, SQL Server</p>
+        <a href="https://github.com/mohamedelmnegged/DroosManagementSystem" target="_blank">View on GitHub ↗</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/mzzjvpyl" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="_replyto" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Connect with me:</p>
+    <a href="https://github.com/mohamedelmnegged" target="_blank">GitHub</a> |
+    <a href="https://linkedin.com/in/mohamedelmnegged" target="_blank">LinkedIn</a> |
+    <a href="https://www.hackerrank.com/profile/mohamedelmnegged" target="_blank">Hackerrank</a> |
+    <a href="mailto:mohamedaahmed92@example.com">Email</a> | 
+    <a href="tel:+201061705223">+201061705223</a>
+    <p style="margin-top:1rem; font-size:0.85rem; color:#64748b;">© 2025 Mohamed Elmnegged. All rights reserved.</p>
+  </footer>
+</body>
+</html>
